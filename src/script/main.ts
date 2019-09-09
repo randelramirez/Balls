@@ -37,18 +37,15 @@ class Main {
    }
 
    public initEventListeners(): void {
-      let self = this;
-
-      $(window).bind('resize', self.updateCanvasDimensions).bind('mousemove', self.onMove);
+      $(window).bind('resize', this.updateCanvasDimensions).bind('mousemove', this.onMove);
       Main.canvas.get(0).ontouchmove = (e) => {e.preventDefault(); this.onTouchMove(<TouchEvent>e)}
 
       Main.canvas.get(0).ontouchstart = (e: Event): void => { e.preventDefault(); }
    }
 
-   public onMove(e: any): void {
+   public onMove(e: JQuery.Event): void {
       if (Main.pointCollection) 
          Main.pointCollection.mousePos.set(e.pageX, e.pageY);
-      
    }
 
    public onTouchMove(e: TouchEvent): void {
@@ -79,6 +76,6 @@ class Main {
 
    public update(): void {
       if (Main.pointCollection)
-            Main.pointCollection.update();
+         Main.pointCollection.update();
    }
 }

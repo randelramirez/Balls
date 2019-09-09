@@ -10,7 +10,6 @@ class PointCollection {
     }
 
     public update(): void {
-        console.log('point-collection update');
         let pointsLength = this.points.length;
 
         for (let i = 0; i < pointsLength; i++) {

@@ -31,7 +31,6 @@ class Point {
     }
 
     public draw(): void {
-        //let ctx: CanvasRenderingContext2D = Main.canvas.get(0).getContext('2d'); //refactor it should not get the canvas context here
         Main.ctx.fillStyle = this.colour;
         Main.ctx.beginPath();
         Main.ctx.arc(this.curPos.x, this.curPos.y, this.radius, 0, Math.PI * 2, true);
@@ -39,7 +38,6 @@ class Point {
     }
 
     public update() :void{
-        console.log('POINT UPDATE!');
         this.updateX();
         this.updateY();
 

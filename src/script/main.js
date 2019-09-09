@@ -25,8 +25,7 @@ class Main {
         this.draw();
     }
     initEventListeners() {
-        let self = this;
-        $(window).bind('resize', self.updateCanvasDimensions).bind('mousemove', self.onMove);
+        $(window).bind('resize', this.updateCanvasDimensions).bind('mousemove', this.onMove);
         Main.canvas.get(0).ontouchmove = (e) => { e.preventDefault(); this.onTouchMove(e); };
         Main.canvas.get(0).ontouchstart = (e) => { e.preventDefault(); };
     }
@@ -77,14 +76,12 @@ class Point {
         this.velocity = new Vector(0.0, 0.0, 0.0);
     }
     draw() {
-        //let ctx: CanvasRenderingContext2D = Main.canvas.get(0).getContext('2d'); //refactor it should not get the canvas context here
         Main.ctx.fillStyle = this.colour;
         Main.ctx.beginPath();
         Main.ctx.arc(this.curPos.x, this.curPos.y, this.radius, 0, Math.PI * 2, true);
         Main.ctx.fill();
     }
     update() {
-        console.log('POINT UPDATE!');
         this.updateX();
         this.updateY();
         let dox = this.originalPos.x - this.curPos.x;
@@ -131,7 +128,6 @@ class PointCollection {
         return point;
     }
     update() {
-        console.log('point-collection update');
         let pointsLength = this.points.length;
         for (let i = 0; i < pointsLength; i++) {
             let point = this.points[i];
