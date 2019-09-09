@@ -1,0 +1,26 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "baseUrl": "./",
+        // "outDir": "./test/",
+        "outFile": "./src/script/main.js",
+        "watch": true,
+        "sourceMap": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "emitDecoratorMetadata": true, //not sure if needed, can be deleted later on if the services are working
+        "experimentalDecorators": true,
+        // "module": "esnext", not supported with outFile
+        "module": "amd",
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "es2015",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2018",
+            "dom"
+        ]
+    }
+}
