@@ -1,4 +1,3 @@
-
 class PointCollection {
     public mousePos: Vector = new Vector(0, 0);
     public points: Point[] = new Array<Point>();
